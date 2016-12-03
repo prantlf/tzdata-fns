@@ -1,5 +1,5 @@
 const test = require('ava')
-const {parseZone1970} = require('.')
+const {parseZone1970, parseISO3166} = require('.')
 
 test('parseZone1970 parses zone1970.tab file', t => {
   const zone1970 = parseZone1970()
@@ -17,4 +17,10 @@ test('parseZone1970 parses zone1970.tab file', t => {
   })
   const cordobaTz = zone1970.find(tz => tz.code === 'America/Argentina/Cordoba')
   t.is(cordobaTz.comments, 'Argentina (most areas: CB, CC, CN, ER, FM, MN, SE, SF)')
+})
+
+test('parseISO3166 parses iso3166.tab file', t => {
+  const ISO3166 = parseISO3166()
+  t.deepEqual(ISO3166[0], {code: 'AD', name: 'Andorra'})
+  t.deepEqual(ISO3166[1], {code: 'AE', name: 'United Arab Emirates'})
 })

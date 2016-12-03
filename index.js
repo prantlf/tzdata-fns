@@ -2,7 +2,8 @@ const fs = require('fs')
 const path = require('path')
 
 module.exports = {
-  parseZone1970
+  parseZone1970,
+  parseISO3166
 }
 
 function parseZone1970 () {
@@ -14,6 +15,13 @@ function parseZone1970 () {
       code,
       comments: comments || ''
     })
+  }, [])
+}
+
+function parseISO3166 () {
+  return parseTabFile('iso3166.tab').reduce((acc, record) => {
+    const [code, name] = record
+    return acc.concat({code, name})
   }, [])
 }
 
