@@ -1,0 +1,12 @@
+{
+  "name": "tzdata-fns",
+  "version": "0.1.0",
+  "description": "IANA timezone database utility library",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/date-fns/tzdata-fns",
+    "type": "git"
+  },
+  "author": "Sasha Koss <koss@nocorp.me>",
+  "license": "MIT"
+}
