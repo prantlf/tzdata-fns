@@ -16,5 +16,12 @@
     "sinon": "^1.17.6",
     "snazzy": "^5.0.0",
     "standard": "^8.6.0"
+  },
+  "scripts": {
+    "lint": "standard --verbose | snazzy",
+    "test": "nyc ava test.js --source '!tmp'",
+    "test-watch": "npm test -- --watch",
+    "test-coverage-report": "nyc report --reporter=html",
+    "test-coverage-coveralls": "nyc report --reporter=text-lcov | coveralls"
   }
 }
