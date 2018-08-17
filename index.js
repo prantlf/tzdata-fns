@@ -11,7 +11,7 @@ function parseZone1970 () {
     const [countryCodes, coordinates, code, comments] = record
     return acc.concat({
       countryCodes: countryCodes.split(','),
-      coordinates: coordinates.match(/([-\+]\d+)/g),
+      coordinates: coordinates.match(/([-+]\d+)/g),
       code,
       comments: comments || ''
     })
